@@ -1,68 +1,12 @@
 import random
-
+from art import stages
 word_list = ["python", "java", "csharp", "swift", "kotlin"]
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+
 
 
 chosen_word = random.choice(word_list)
 display = list("_"*(len(chosen_word)))
-# print(display)
-print(chosen_word)
+print(display)
 
 lives = 6
 
@@ -82,12 +26,13 @@ while not end_of_game:
     print(display)
     if "_" not in display:
         end_of_game = True
-        print(stages[0])
-        print("You lose the game")
+        # print(stages[0])
+        print("You won the game")
     elif lives == 0:
         end_of_game = True
         print(stages[0])
         print("You lose the game")
+        break
     print(stages[lives])
         
                 
