@@ -52,7 +52,15 @@ def save():
             website_entry.delete(0,END)  
             password_entry.delete(0,END)
 
-
+def find_password():
+    web = website_entry.get()
+    file = "100 Days code/Day 30 Exception Error/data.json"
+    with open(file,"r") as data_file:
+        data = json.load(data_file)
+    if web in data:
+        messagebox.showinfo(title="Search",message=f"website: {web} \nPassword: {data[web]["password"]}")
+    else:
+        messagebox.showinfo(title="Search",message="No details for the website exists.")
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -77,8 +85,8 @@ password_label.grid(column=0, row=3)
 
 
 # Inputs
-website_entry = Entry(width=52)
-website_entry.grid(column=1, row=1,columnspan=2)
+website_entry = Entry(width=33)
+website_entry.grid(column=1, row=1)
 website_entry.focus() # Focus on the entry field
 
 email_entry = Entry(width=52)
@@ -94,6 +102,10 @@ generate_button.grid(column=2, row=3)
 
 add_button = Button(text="Add",width=44, command= save)
 add_button.grid(column=1,row=4,columnspan=2)
+
+search_button = Button(text="Search", width= 14,command=find_password)
+search_button.grid(column=2, row=1)
+
 
 window.mainloop()
 
