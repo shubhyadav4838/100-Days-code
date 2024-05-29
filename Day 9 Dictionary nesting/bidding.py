@@ -16,7 +16,7 @@ bid = True
 dic = {}
 while bid:
     name = input("What is your name: ")
-    price = int(input("What's your bid: "))
+    price = int(input("What's your bid($): "))
     ask = input("Are there any other bidders? Type 'y' for yes and 'n' for no:")
     dic[name]=price
     if ask=='n':
