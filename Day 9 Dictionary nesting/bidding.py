@@ -23,4 +23,3 @@ while bid:
         bid=False
 max_bid = max(dic.values())
 print(f"The Highest bid is {max_bid} of { [key for key in dic if dic[key]==max_bid ][0]} ")
-    
